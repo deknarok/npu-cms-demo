@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>NPU Curriculum Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Sarabun:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<div id="app" class="shell" data-loading="true">
+  <aside class="side" id="side" aria-label="เมนูหลัก">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">CMS</div>
+      <div class="brand-text"><strong>ระบบบริหารจัดการหลักสูตร</strong><span>มหาวิทยาลัยนครพนม · ต้นแบบ</span></div>
+    </div>
+    <nav id="nav" class="nav"></nav>
+    <div class="side-foot">
+      <button type="button" class="link-btn" data-act="reset-data" id="btn-reset">รีเซ็ตข้อมูลจำลอง</button>
+      <span class="muted small">ต้นแบบ v1 · 18 พ.ย. 2569</span>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <button type="button" class="icon-btn menu-btn" data-act="toggle-side" aria-label="เปิดเมนู" id="btn-menu">☰</button>
+      <form class="search" data-form="global-search" role="search">
+        <label for="q-global" class="sr">ค้นหาหลักสูตรหรือรายวิชา</label>
+        <input id="q-global" name="q" type="search" placeholder="ค้นหาหลักสูตร รหัสวิชา หรือชื่ออาจารย์" autocomplete="off">
+      </form>
+      <div class="top-right">
+        <span class="legend-chip" title="ข้อมูลจริงจากระบบทะเบียน/ERP"><i class="dot real"></i>ข้อมูลจริง</span>
+        <span class="legend-chip" title="ข้อมูลจำลองเพื่อสาธิต"><i class="dot sim"></i>จำลอง</span>
+        <button type="button" class="persona" data-act="switch-user" id="btn-persona" aria-haspopup="dialog">
+          <span class="persona-role" id="persona-role">—</span>
+          <span class="persona-name" id="persona-name">กำลังโหลด…</span>
+        </button>
+      </div>
+    </header>
+    <main id="view" class="view" tabindex="-1">
+      <div class="loading" id="loading">
+        <div class="loading-box">
+          <strong>กำลังโหลดข้อมูลต้นแบบ</strong>
+          <ol id="load-list" class="load-list"></ol>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-back" data-act="close-modal"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header class="modal-head"><h2 id="modal-title">—</h2><button type="button" class="icon-btn" data-act="close-modal" aria-label="ปิด">✕</button></header>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/core.js"></script>
+<script src="assets/logic.js"></script>
+<script src="assets/docs.js"></script>
+<script src="assets/docs-tqf.js"></script>
+<script src="assets/screens-main.js"></script>
+<script src="assets/screens-program.js"></script>
+<script src="assets/screens-work.js"></script>
+<script src="assets/screens-admin.js"></script>
+<script src="assets/logic-lifecycle.js"></script>
+<script src="assets/screens-lifecycle.js"></script>
+<script src="assets/history.js"></script>
+<script src="assets/regsync.js"></script>
+<script src="assets/resolutions.js"></script>
+<script src="assets/structure.js"></script>
+<script src="assets/subsidy.js"></script>
+<script src="assets/obe-registry.js"></script>
+<script src="assets/pubreg.js"></script>
+<script src="assets/backfill.js"></script>
+<script src="assets/protect.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
