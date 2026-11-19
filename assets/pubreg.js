@@ -201,3 +201,6 @@ act("pubround-close", el => { const r = D.staffData.pubRounds.find(x => x.id ===
   confirmTyped("ปิดรอบรายงาน/ประเมิน", `ปิดรอบ "${esc(r.name)}" — รายการผลงาน ${r.picks.length} รายการจะถูกล็อก`, "ปิดรอบ", () => { r.status = "CLOSED"; r.closedAt = today(); r.closedBy = S.user; r.hash = fnv(stable(r.picks)); audit("ปิดรอบรายงานผลงาน", `${r.name} ${r.picks.length}`); persist(); rerender(); }); });
 act("pubround-csv", el => { const r = D.staffData.pubRounds.find(x => x.id === Number(el.dataset.id));
   saveFile(`ผลงาน-${r.name}.csv`, csv(r.picks, [{ th: "รหัสบุคลากร", val: k => k.staff }, { th: "ชื่อ", val: k => staffName(k.staff) }, { th: "ปี", val: k => k.snap.year }, { th: "ผลงาน", val: k => k.snap.title }, { th: "แหล่งเผยแพร่", val: k => k.snap.venue }, { th: "ประเภท", val: k => k.snap.type }, { th: "ฐาน", val: k => k.snap.db }, { th: "DOI", val: k => k.snap.doi }, { th: "แหล่งข้อมูล", val: k => k.snap.source }, { th: "ERP-HR", val: k => k.snap.hr }])); });
+
+/* ลิงก์เดิม #publications → หน้าใหม่รายหลักสูตร (G10) */
+ROUTES.publications = ROUTES.pubreg;

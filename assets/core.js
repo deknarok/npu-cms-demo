@@ -38,7 +38,7 @@ async function loadAll() {
   await Promise.all(DATA_FILES.map(async ([k, url]) => {
     if (saved && saved.data && saved.data[k] !== undefined) { D[k] = saved.data[k]; }
     else {
-      const r = await fetch(url);
+      const r = await fetch(url + "?v=20261119120318");
       if (!r.ok) throw new Error(`โหลด ${url} ไม่สำเร็จ (${r.status})`);
       D[k] = await r.json();
     }
